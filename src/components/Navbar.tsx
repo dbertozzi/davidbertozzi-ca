@@ -1,31 +1,31 @@
 import React from "react";
-import { css, cx } from "emotion";
+import { css } from "emotion";
+import { Link } from "react-router-dom";
+import Button from "./Button";
 
-const Button: React.FunctionComponent<{ label: string }> = props => {
-  return (
-    <button
-      className={css`
-        background-color: black;
-        color: white;
-        padding: 10px;
-        border: 0px;
-        &:hover {
-          background-color: grey;
-        }
-      `}
-    >
-      {props.label}
-    </button>
-  );
-};
 const Navbar: React.FC = () => {
+  const navItems: { label: string; path: string }[] = [
+    { label: "About", path: "/" },
+    { label: "Software", path: "/software" },
+    { label: "Mechanical", path: "/" },
+    { label: "Contact", path: "/" },
+    { label: "Extracurricular", path: "/" }
+  ];
   return (
     <div
       className={css`
         display: flexbox;
+        background-color: black;
+        width: 100%;
       `}
     >
-      <Button label="software" />
+      {navItems.map(item => {
+        return (
+          <Link to={item.path}>
+            <Button label={item.label} />
+          </Link>
+        );
+      })}
     </div>
   );
 };
