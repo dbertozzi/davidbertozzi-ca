@@ -71,9 +71,9 @@ const data: {
   capstone: {
     title: `Embedded Developer, Hydraulic and Pneumatic Lab Equipment Design`,
     listItems: [
+      `Interfaced with hardware using C to read signals from analog ports, convert to digital, and write data to storage device asynchronously according to interrupt events`,
       `Designed, wrote, and tested code for limited memory microcontroller to perform concurrent operations`,
-      `Selected hardware electric motor control, optical sensor data sampling, force sensor data sampling with Arduino`,
-      `Interfaced with hardware using C to read signals from analog ports, convert to digital, and write data to storage device asynchronously according to interrupt events`
+      `Selected hardware electric motor control, optical sensor data sampling, force sensor data sampling with Arduino`
     ]
   },
   hueclues: {

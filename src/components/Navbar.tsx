@@ -6,10 +6,8 @@ import Button from "./Button";
 const Navbar: React.FC = () => {
   const navItems: { label: string; path: string }[] = [
     { label: "About", path: "/" },
-    { label: "Software", path: "/software" },
-    { label: "Mechanical", path: "/" },
-    { label: "Contact", path: "/" },
-    { label: "Extracurricular", path: "/" }
+    { label: "Projects", path: "/projects" },
+    { label: "Contact", path: "/contact" }
   ];
   return (
     <div
@@ -19,13 +17,26 @@ const Navbar: React.FC = () => {
         width: 100%;
       `}
     >
-      {navItems.map(item => {
-        return (
-          <Link to={item.path}>
-            <Button label={item.label} />
-          </Link>
-        );
-      })}
+      <ul
+        className={css`
+          display: flex;
+        `}
+      >
+        {navItems.map(item => {
+          return (
+            <Link to={item.path}>
+              <li
+                className={css`
+                  list-style: none;
+                  margin: 0 20px 0 0;
+                `}
+              >
+                {item.label}
+              </li>
+            </Link>
+          );
+        })}
+      </ul>
     </div>
   );
 };
