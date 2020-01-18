@@ -1,12 +1,22 @@
 const data: {
   introduction: { title: string; content: string }[];
-  skills: { title: string; listItems: string[] };
+  skills: {
+    technical: { title: string; listItems: string[] };
+    design: { title: string; listItems: string[] };
+  };
   ventumFit: { title: string; listItems: string[]; link: string };
   diamondFit: { title: string; listItems: string[] };
   capstone: { title: string; listItems: string[] };
   hueclues: { title: string; listItems: string[] };
   hatchways: { title: string; listItems: string[]; link: string };
+  motivationCopy: string;
+  githubURL: string;
 } = {
+  motivationCopy: `I am passionate about making things. Software is constantly innovating 
+  its tools and application, and has potential to influence the world and beyond. With my 
+  value for meaning and personal challenge web 
+  development is one of the most exciting and fulfilling careers possible.`,
+  githubURL: "https://github.com/dbertozzi",
   introduction: [
     {
       title: "Introduction",
@@ -34,20 +44,36 @@ const data: {
     }
   ],
   skills: {
-    title: "Skills",
-    listItems: [
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Python",
-      "AWS",
-      "SQL",
-      "C",
-      "HTML5",
-      "CSS3",
-      "npm",
-      "webpack"
-    ]
+    technical: {
+      title: "Technical",
+      listItems: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Python",
+        "AWS",
+        "SQL",
+        "C",
+        "HTML5",
+        "CSS",
+        "SCSS",
+        "npm",
+        "webpack"
+      ]
+    },
+    design: {
+      title: "Design",
+      listItems: [
+        "Sketch",
+        "InVision",
+        "Illustrator",
+        "Indesign",
+        "Wordpress",
+        "Shopify",
+        "SolidWorks",
+        "Onshape"
+      ]
+    }
   },
   ventumFit: {
     link: "http://fit.ventumracing.com",

@@ -1,14 +1,8 @@
 import React from "react";
-import { css } from "emotion";
 
 const Landing: React.FC = () => {
   return (
-    <div
-      className={css`
-        padding-left: 2em;
-        padding-right: 2em;
-      `}
-    >
+    <div>
       <h1>Contact</h1>
       <p>
         For inquiry about interesting opportunities David is available by email.
