@@ -1,0 +1,165 @@
+$main-bg-color: #0957a8;
+$primary-color-1: #246db9;
+$primary-color-2: #064586;
+$secondary-color-1: #ffa621;
+$secondary-color-2: #ce7b00;
+$grey-color-1: #05101b;
+
+$main-font: Roboto, sans-serif;
+// to be selected
+$header-font: undefined;
+
+body {
+  font-family: $main-font;
+  color: $grey-color-1;
+  background-color: $main-bg-color;
+}
+a {
+  color: $grey-color-1;
+  text-decoration: none;
+}
+
+/* Navbar */
+// for small screens place nav at top and logo below
+// or change to hamburger and put logo centered
+$nav-height: 72px;
+.header-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  width: 100vw;
+  height: $nav-height;
+}
+%nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  width: 100px;
+}
+.navbar {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  grid-column: 2;
+  grid-row: -1;
+  justify-self: center;
+}
+.nav-item {
+  @extend %nav-item;
+  background-color: $primary-color-1;
+  &:hover {
+    background-color: $secondary-color-1;
+  }
+}
+.selected-nav-item {
+  @extend %nav-item;
+  background-color: $primary-color-2;
+}
+.styled-link {
+  text-decoration: none;
+  text-align: center;
+  flex-grow: 1;
+}
+/* Navbar logo */
+.logo-div {
+  grid-column: 0;
+  margin-left: 2em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+.name-div {
+  font-size: 36px;
+  letter-spacing: 4px;
+  order: 0;
+}
+.eng-div {
+  order: 1;
+  font-size: 12px;
+  color: $secondary-color-2;
+  margin-left: 3px;
+}
+/* Block at top right of page */
+.top-right-block {
+  height: 36px;
+  width: 150px/1440px * 100vw;
+  grid-column: 3;
+  justify-self: flex-end;
+  align-self: flex-end;
+  background-color: $primary-color-1;
+  border: 1px solid $secondary-color-1;
+  margin-bottom: -20px;
+  transform: translate(1px);
+}
+
+/* Portfolio Motivation */
+$github-circle-diameter: 250px;
+$motivation-copy-width: 300px;
+$banner-content-width: 70vw;
+.motivation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: $banner-content-width;
+  margin: auto;
+  height: 600px;
+  div {
+    width: $motivation-copy-width;
+    order: 0;
+  }
+  a {
+    order: 1;
+    width: $github-circle-diameter;
+    height: $github-circle-diameter;
+    border-radius: $github-circle-diameter/2;
+    border: 3px solid $secondary-color-2;
+    background-color: $primary-color-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: ($motivation-copy-width - $github-circle-diameter)/2;
+  }
+}
+// add media query for less than 750px width to change motivation to column
+/* Portfolio banner */
+.portfolio-banner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fold-line {
+  background-color: $secondary-color-1;
+  width: 100vw;
+  height: 3px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+// make margin smaller for small screens
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  height: 300px;
+  div,
+  h2 {
+    margin: 1em;
+    margin-left: (100vw - $banner-content-width)/2;
+    margin-right: (100vw - $banner-content-width)/2;
+    align-self: flex-start;
+  }
+}
+
+// temp until new projects layout is implimented
+.projects-wrapper {
+  margin-left: (100vw - $banner-content-width)/2;
+  margin-right: (100vw - $banner-content-width)/2;
+  ul {
+    margin-bottom: 10vh;
+  }
+}
