@@ -7,7 +7,7 @@ const Header: React.FC<{
   return (
     <div className="header-wrapper">
       <div className="logo-div">
-        <div className="name-div">David Bertozzi</div>
+        <h1 className="name-div">David Bertozzi</h1>
         <div className="eng-div">Engineer</div>
       </div>
       <div className="top-right-block" />

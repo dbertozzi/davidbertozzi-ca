@@ -13,7 +13,7 @@ const data: {
   githubURL: string;
 } = {
   motivationCopy: `I am passionate about making things. Software is constantly innovating 
-  its tools and application, and has potential to influence the world and beyond. With my 
+  its tools and application in ways that have potential to influence everything. With my 
   value for meaning and personal challenge web 
   development is one of the most exciting and fulfilling careers possible.`,
   githubURL: "https://github.com/dbertozzi",
