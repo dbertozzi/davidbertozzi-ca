@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 
 const Header: React.FC<{
-  navItems: { label: string; path: string; class: string }[];
+  navItems: { label: string; path: string }[];
 }> = ({ navItems }) => {
   return (
     <div className="header-wrapper">

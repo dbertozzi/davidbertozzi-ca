@@ -6,10 +6,10 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 
 const App: React.FC = () => {
-  const navItems: { label: string; path: string; class: string }[] = [
-    { label: "About", path: "/", class: "" },
-    { label: "Projects", path: "/projects", class: "" },
-    { label: "Contact", path: "/contact", class: "" }
+  const navItems: { label: string; path: string }[] = [
+    { label: "About", path: "/" },
+    { label: "Projects", path: "/projects" },
+    { label: "Contact", path: "/contact" }
   ];
   return (
     <BrowserRouter>
