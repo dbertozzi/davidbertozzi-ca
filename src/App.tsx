@@ -6,7 +6,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 
 const App: React.FC = () => {
-  let navItems: { label: string; path: string; class: string }[] = [
+  const navItems: { label: string; path: string; class: string }[] = [
     { label: "About", path: "/", class: "" },
     { label: "Projects", path: "/projects", class: "" },
     { label: "Contact", path: "/contact", class: "" }

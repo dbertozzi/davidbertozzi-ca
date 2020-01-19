@@ -17,6 +17,9 @@ body {
 a {
   color: $grey-color-1;
   text-decoration: none;
+  &:hover {
+    color: $secondary-color-2;
+  }
 }
 h1,
 h2,
@@ -82,6 +85,7 @@ $nav-height: 72px;
   font-size: 36px;
   letter-spacing: 4px;
   order: 0;
+  margin: 0;
 }
 .eng-div {
   order: 1;
@@ -104,8 +108,9 @@ $nav-height: 72px;
 
 /* Portfolio Motivation */
 $github-circle-diameter: 250px;
-$motivation-copy-width: 300px;
+$motivation-copy-width: 310px;
 $banner-content-width: 70vw;
+
 .motivation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -151,8 +156,8 @@ $banner-content-width: 70vw;
 .skills-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   height: 300px;
   div,
   h2 {
@@ -165,9 +170,97 @@ $banner-content-width: 70vw;
 
 // temp until new projects layout is implimented
 .projects-wrapper {
-  margin-left: (100vw - $banner-content-width)/2;
-  margin-right: (100vw - $banner-content-width)/2;
   ul {
     margin-bottom: 10vh;
   }
+}
+.content-wrapper,
+.projects-wrapper {
+  margin-left: (100vw - $banner-content-width)/2;
+  margin-right: (100vw - $banner-content-width)/2;
+}
+
+/* Project (individual) component */
+$project-nav-height: 100px;
+$image-row: 2;
+$list-link-row: 3;
+.project-content {
+  display: grid;
+  grid-template-columns: (100vw - $banner-content-width)/2 repeat(2, 1fr) (
+      100vw - $banner-content-width
+    )/2;
+  grid-template-rows: 100px repeat(2, 1fr);
+  grid-gap: 2em;
+  .project-img-wrapper {
+    grid-column: 3;
+    grid-row: $image-row;
+    width: 600px;
+    height: 335px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    z-index: -1;
+    margin-bottom: $project-nav-height;
+    justify-self: center;
+  }
+  img[alt*="project"] {
+    width: 600px;
+    height: auto;
+    max-height: 335px;
+  }
+  p:first-of-type {
+    grid-column: 2;
+    grid-row: $image-row;
+  }
+  a[title$="live site or github"] {
+    width: $github-circle-diameter;
+    height: $github-circle-diameter;
+    border-radius: $github-circle-diameter/2;
+    border: 3px solid $secondary-color-2;
+    background-color: $primary-color-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+    grid-row: $list-link-row;
+    justify-self: center;
+    align-self: center;
+  }
+  ul {
+    grid-column: 3;
+    grid-row: $list-link-row;
+    align-self: center;
+  }
+  h2[title*="Project"] {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+}
+.project-img-nav {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  grid-column: 3;
+  grid-row: $image-row;
+  align-self: end;
+  height: $project-nav-height;
+  h2 {
+    width: 300px;
+    text-align: center;
+  }
+}
+%arrow {
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+$arrow-ytranslate: 5px;
+img[alt="left arrow"] {
+  @extend %arrow;
+  transform: rotate(180deg) translateY(5px);
+}
+img[alt="right arrow"] {
+  @extend %arrow;
+  transform: translateY(7px);
 }

@@ -4,18 +4,28 @@ const data: {
     technical: { title: string; listItems: string[] };
     design: { title: string; listItems: string[] };
   };
-  ventumFit: { title: string; listItems: string[]; link: string };
-  diamondFit: { title: string; listItems: string[] };
-  capstone: { title: string; listItems: string[] };
-  hueclues: { title: string; listItems: string[] };
-  hatchways: { title: string; listItems: string[]; link: string };
+  ventumFit: {
+    title: string;
+    listItems: string[];
+    link: string;
+    images: { copy: string; src: string; label: string }[];
+  };
+  diamondFit: { title: string; listItems: string[]; description: string };
+  capstone: { title: string; listItems: string[]; description: string };
+  hueclues: { title: string; listItems: string[]; images: { src: string }[] };
+  hatchways: {
+    title: string;
+    listItems: string[];
+    link: string;
+    description: string;
+  };
   motivationCopy: string;
   githubURL: string;
 } = {
   motivationCopy: `I am passionate about making things. Software is constantly innovating 
   its tools and application in ways that have potential to influence everything. With my 
   value for meaning and personal challenge web 
-  development is one of the most exciting and fulfilling careers possible.`,
+  development is one of the most exciting and fulfilling careers possible for me.`,
   githubURL: "https://github.com/dbertozzi",
   introduction: [
     {
@@ -84,6 +94,49 @@ const data: {
       `Application layout with CSS Grid and Flexbox, and Media Query Breakpoints to create a responsive design according to Designer's specification`,
       `UX Design intended to present users of different knowledge levels with information at a digestible rate`,
       `Managing project tasks and timeline using NiftyPM`
+    ],
+    images: [
+      {
+        copy: `Ventum requested a fit tool after seeing the press about Diamondback's calculator. Triathlon bike fit is a complex 
+        topic and for direct-to-consumer bike sales, an obstacle for sale because customers fear the costly mistake of selecting the wrong size. The bikes can adjust in a plethora of 
+        ways and fit ranges overlap. The objective get the athlete on the size that fits them now and has the right adjustment for the future without live customer support.`,
+        src: "/ventum-fit/01.png",
+        label: "Select a frame"
+      },
+      {
+        copy: `The user chooses a method of bike fit. If they already own a bike measuring it would be the best way to start. 
+        if they do not, an equation based on many orthodox bike fits helps predict their fit point.`,
+        src: "/ventum-fit/02.png",
+        label: "Select fit method"
+      },
+      {
+        copy: `The user is instructed on how to accurately measure their bicycle or body based on the previous selection. These measurements are provide 
+        a fit point that allows the user to relate their unique fit to possible fit coordinates of each size of frame.`,
+        src: "/ventum-fit/03.png",
+        label: "Measurement entry"
+      },
+      {
+        copy: `For an athlete purchasing their first triathlon bike the frame size may be all they need to know to make the purchase. 
+        If the frame size is correct they can visit a bike fitter once they get the bike and have it professionally adjusted. Alternatively, they could begin 
+        with the suggested fit point and make small adjustments over time until a position is found. The suggested point is a standard, but there is error in measuring the 
+        body as well as uniqueness in physiology. Even with a professional in person fit it is a continual process of adjustment seeking the ideal position that offers optimal aerodynics and power output.`,
+        src: "/ventum-fit/04.png",
+        label: "Suggested frame size"
+      },
+      {
+        copy: `For athletes who are experienced with bike fit or want to learn more the details are provided. The adjustment range from the athletes fit point is shown in relation to the 
+        suggested size, and the nearest neighboring sizes. There are cases when an athlete may not to be in the middle of the adjustment range. For instance, if the athlete is absolutely sure of 
+        their fit point they may want to have no spacers under the stem or arm rests for aerodynamics and a clean aesthetic.`,
+        src: "/ventum-fit/05.png",
+        label: "Fit details"
+      },
+      {
+        copy: `A graphical representation of the fit range is standard information that athletes use to select bicycles. In the fit details 
+        an interactive plot shows the user where their fit point is in the range of fit points graphically, and displays the details of how to 
+        configure each fit point when it is moused over.`,
+        src: "/ventum-fit/06.png",
+        label: "Fit plot"
+      }
     ]
   },
   diamondFit: {
@@ -92,7 +145,8 @@ const data: {
       `Designed a bike fitting app that provides easily accessible information to customers and bike fitters that would normally require interacting with a customer service agent during and after purchase`,
       `Implemented design using JavaScript, Chart.js, and Bootstrap`,
       `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`
-    ]
+    ],
+    description: ``
   },
   capstone: {
     title: `Embedded Developer, Hydraulic and Pneumatic Lab Equipment Design`,
@@ -100,7 +154,8 @@ const data: {
       `Interfaced with hardware using C to read signals from analog ports, convert to digital, and write data to storage device asynchronously according to interrupt events`,
       `Designed, wrote, and tested code for limited memory microcontroller to perform concurrent operations`,
       `Selected hardware electric motor control, optical sensor data sampling, force sensor data sampling with Arduino`
-    ]
+    ],
+    description: ``
   },
   hueclues: {
     title: `Front End Developer, Hueclues`,
@@ -108,7 +163,8 @@ const data: {
       `UX Design and Development of front end features using JavaScript and Bootstrap resulting in 500+ user sign up`,
       `Wrote internal documentation for testing and staging procedures`,
       `Worked in cross-functional team to deliver a high quality user experience and meet functional objectives`
-    ]
+    ],
+    images: [{ src: "" }]
   },
   hatchways: {
     link: "https://github.com/hatchways/team-chestnut",
@@ -117,7 +173,8 @@ const data: {
       `Engaged in agile workflow using Git and Zenhub with developers and team lead`,
       `Developed RESTful Web Services for user registration/login, new product creation, and getting user profile using Node.js, Express, Mongoose, MongoDB, and JWT authentication`,
       `Developed React components for user shop, and new product creation with Material UI, Axios, and useReducer`
-    ]
+    ],
+    description: ``
   }
 };
 
