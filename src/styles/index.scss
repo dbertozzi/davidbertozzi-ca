@@ -174,10 +174,43 @@ $banner-content-width: 70vw;
     margin-bottom: 10vh;
   }
 }
+.landing-wrapper,
 .content-wrapper,
 .projects-wrapper {
   margin-left: (100vw - $banner-content-width)/2;
   margin-right: (100vw - $banner-content-width)/2;
+}
+.landing-wrapper {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-rows: 2fr 50px 1fr;
+  grid-gap: 2em;
+  margin-top: 70px;
+  h1 {
+    grid-row: 2;
+    grid-column: 1;
+    margin: 0;
+  }
+  div[title="cover image"] {
+    background-image: url("/landing/cover_photo_bw.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: $banner-content-width;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+  img[alt="david bertozzi headshot"] {
+    grid-row: 3;
+    grid-column: 2;
+    width: 200px;
+    height: auto;
+  }
+  p {
+    grid-row: 3;
+    grid-column: 1;
+  }
 }
 
 /* Project (individual) component */
