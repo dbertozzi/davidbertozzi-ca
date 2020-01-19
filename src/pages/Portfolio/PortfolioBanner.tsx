@@ -8,22 +8,18 @@ const PortfolioBanner: React.FunctionComponent<{
     technical: { title: string; listItems: string[] };
     design: { title: string; listItems: string[] };
   };
-}> = props => {
+}> = ({ motivationCopy, githubURL, skills }) => {
   return (
     <div className="portfolio-banner-wrapper">
-      <Motivation
-        motivationCopy={props.motivationCopy}
-        githubURL={props.githubURL}
-      />
+      <Motivation motivationCopy={motivationCopy} githubURL={githubURL} />
       <div className="skills-wrapper">
         <h2>Skills</h2>
         <div>
-          <b>{props.skills.technical.title}:</b>{" "}
-          {props.skills.technical.listItems.join(", ")}
+          <b>{skills.technical.title}:</b>{" "}
+          {skills.technical.listItems.join(", ")}
         </div>
         <div>
-          <b>{props.skills.design.title}:</b>{" "}
-          {props.skills.design.listItems.join(", ")}
+          <b>{skills.design.title}:</b> {skills.design.listItems.join(", ")}
         </div>
       </div>
     </div>

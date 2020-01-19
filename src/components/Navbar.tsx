@@ -2,22 +2,23 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar: React.FC<{
-  navItems: { label: string; path: string; class: string }[];
-}> = props => {
-  let location = useLocation();
-  props.navItems.forEach(item => {
+  navItems: { label: string; path: string }[];
+}> = ({ navItems }) => {
+  const location = useLocation();
+  const navClasses = new Array(navItems.length).fill("");
+  navItems.forEach((item, index) => {
     if (location.pathname === item.path) {
-      item.class = "selected-nav-item";
+      navClasses[index] = "selected-nav-item";
     } else {
-      item.class = "nav-item";
+      navClasses[index] = "nav-item";
     }
   });
   return (
     <ul className="navbar">
-      {props.navItems.map((item, index) => {
+      {navItems.map((item, index) => {
         return (
           <Link className="styled-link" to={item.path} key={item.label}>
-            <li className={item.class}>{item.label}</li>
+            <li className={navClasses[index]}>{item.label}</li>
           </Link>
         );
       })}
