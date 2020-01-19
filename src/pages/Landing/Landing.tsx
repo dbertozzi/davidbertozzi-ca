@@ -14,7 +14,7 @@ const Landing: React.FC = () => {
           consultant specializing in bicycle design and managing product
           development. I&apos;m a continual learner with something always on the
           go that keeps me excited about life and feeling growth. Outside of
-          engineering I enjoy the outdoors and is a cycling enthusiast.
+          engineering I enjoy the outdoors and am a cycling enthusiast.
         </p>
         <img src="/landing/profile_photo.jpg" alt="david bertozzi headshot" />
       </div>
