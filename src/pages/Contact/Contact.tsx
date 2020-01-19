@@ -7,8 +7,7 @@ const Landing: React.FC = () => {
       <div>
         <h1>Contact</h1>
         <p>
-          For inquiry about interesting opportunities David is available by
-          email.
+          For inquiry about interesting opportunities I am available by email.
         </p>
         <p>
           <strong>Email:</strong> david.a.bertozzi@gmail.com

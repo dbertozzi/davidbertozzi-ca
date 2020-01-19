@@ -168,13 +168,15 @@ const data: {
   },
   hatchways: {
     link: "https://github.com/hatchways/team-chestnut",
-    title: "Full Stack Developer, Hatchways Etsy Style Store",
+    title: "Hatchways Etsy Style Store",
     listItems: [
       `Engaged in agile workflow using Git and Zenhub with developers and team lead`,
       `Developed RESTful Web Services for user registration/login, new product creation, and getting user profile using Node.js, Express, Mongoose, MongoDB, and JWT authentication`,
       `Developed React components for user shop, and new product creation with Material UI, Axios, and useReducer`
     ],
-    description: ``
+    description: `This was a two month long team project I contributed to. The objective was to gain experience in a professional agile work flow 
+    and practice new technologies. The app we built is an online Bakery Shop that allows sellers to create their own stores and list their
+     products alongside other sellers. Both shoppers and sellers can sign up for accounts and transactions are completed with Stripe.`
   }
 };
 
