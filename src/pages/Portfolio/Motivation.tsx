@@ -1,5 +1,4 @@
 import React from "react";
-import data from "./portfolioContent";
 
 const Motivation: React.FunctionComponent<{
   motivationCopy: string;

@@ -9,9 +9,6 @@ const PortfolioBanner: React.FunctionComponent<{
     design: { title: string; listItems: string[] };
   };
 }> = props => {
-  let bannerNavItems: { label: string; path: string; class: string }[] = [
-    { label: "Motivation", path: "/motivation", class: "" }
-  ];
   return (
     <div className="portfolio-banner-wrapper">
       <Motivation

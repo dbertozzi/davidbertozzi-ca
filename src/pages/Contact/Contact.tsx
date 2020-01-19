@@ -2,7 +2,7 @@ import React from "react";
 
 const Landing: React.FC = () => {
   return (
-    <div>
+    <div className="content-wrapper">
       <h1>Contact</h1>
       <p>
         For inquiry about interesting opportunities David is available by email.

@@ -2,9 +2,8 @@ import React from "react";
 
 const Landing: React.FC = () => {
   return (
-    <div>
-      <h1>David Bertozzi</h1>
-      <h3>Engineer</h3>
+    <div className="content-wrapper">
+      <h2>About</h2>
       <p>
         David is a graduate of University of Toronto with a degree in Mechanical
         Engineering specializing in stream options of Mechatronics and Heat and
