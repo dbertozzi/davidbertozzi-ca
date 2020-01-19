@@ -2,7 +2,7 @@ import React from "react";
 import data from "./portfolioContent";
 import Banner from "./PortfolioBanner";
 import Project from "./Project";
-import HatchwaysProject from "./HatchwaysProject";
+import ProjectNoImages from "./ProjectNoImages";
 
 const SoftwarePortfolio: React.FC = () => {
   return (
@@ -15,7 +15,9 @@ const SoftwarePortfolio: React.FC = () => {
       <div className="fold-line" />
       <Project project={data.ventumFit} />
       <div className="fold-line" />
-      <HatchwaysProject project={data.hatchways} />
+      <ProjectNoImages project={data.hatchways} />
+      <div className="fold-line" />
+      <ProjectNoImages project={data.diamondFit} />
     </>
   );
 };

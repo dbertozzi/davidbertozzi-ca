@@ -1,15 +1,17 @@
 import React from "react";
 
-const SoftwarePortfolio: React.FC<{
+const ProjectNoImages: React.FC<{
   project: {
     title: string;
     listItems: string[];
     link: string;
+    linkTitle: string;
     description: string;
+    path: string;
   };
 }> = ({ project }) => {
   return (
-    <div className="hatchways-wrapper">
+    <div className="project-no-images-wrapper">
       <h2>{project.title}</h2>
       <p>{project.description}</p>
       <ul>
@@ -21,12 +23,12 @@ const SoftwarePortfolio: React.FC<{
         href={project.link}
         target="_blank"
         rel="noopener noreferrer"
-        title={`${project.title} GitHub`}
+        title={`${project.title} Link`}
       >
-        <h2>Visit project GitHub</h2>
+        <h2>{project.linkTitle}</h2>
       </a>
     </div>
   );
 };
 
-export default SoftwarePortfolio;
+export default ProjectNoImages;
