@@ -10,7 +10,14 @@ const data: {
     link: string;
     images: { copy: string; src: string; label: string }[];
   };
-  diamondFit: { title: string; listItems: string[]; description: string };
+  diamondFit: {
+    title: string;
+    listItems: string[];
+    description: string;
+    link: string;
+    linkTitle: string;
+    path: string;
+  };
   capstone: { title: string; listItems: string[]; description: string };
   hueclues: { title: string; listItems: string[]; images: { src: string }[] };
   hatchways: {
@@ -18,6 +25,8 @@ const data: {
     listItems: string[];
     link: string;
     description: string;
+    linkTitle: string;
+    path: string;
   };
   motivationCopy: string;
   githubURL: string;
@@ -146,7 +155,14 @@ const data: {
       `Implemented design using JavaScript, Chart.js, and Bootstrap`,
       `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`
     ],
-    description: ``
+    description: `When tasked with creating a fit table for a KQS client's triathlon bicycle I knew there could be a more precise way to do it. 
+    I had read on Slowtwitch about all the information athletes like to know about triathlon bike fit, and Slowtwitch Founder Dan Empfield had written 
+    extensive articles on the topic. With a bit of research I came up with a concept for assigning bicycle size. Diamondback's Custom Studio program where 
+    the calculator was used has since been shut down and I do not have permisison to host it myself but an article reviewing the calculator on slowtwitch remains.`,
+    link:
+      "https://www.slowtwitch.com/Bike_Fit/Diamondback_s_Online_Fit_Calculator_6559.html",
+    linkTitle: "Visit project review",
+    path: "diamondback-fit"
   },
   capstone: {
     title: `Embedded Developer, Hydraulic and Pneumatic Lab Equipment Design`,
@@ -168,13 +184,17 @@ const data: {
   },
   hatchways: {
     link: "https://github.com/hatchways/team-chestnut",
-    title: "Full Stack Developer, Hatchways Etsy Style Store",
+    title: "Hatchways Etsy Style Store",
     listItems: [
       `Engaged in agile workflow using Git and Zenhub with developers and team lead`,
       `Developed RESTful Web Services for user registration/login, new product creation, and getting user profile using Node.js, Express, Mongoose, MongoDB, and JWT authentication`,
       `Developed React components for user shop, and new product creation with Material UI, Axios, and useReducer`
     ],
-    description: ``
+    description: `This was a two month long team project I contributed to. The objective was to gain experience in a professional agile work flow 
+    and practice new technologies. The app we built is an online Bakery Shop that allows sellers to create their own stores and list their
+     products alongside other sellers. Both shoppers and sellers can sign up for accounts and transactions are completed with Stripe.`,
+    linkTitle: "Visit project GitHub",
+    path: "hatchways"
   }
 };
 
