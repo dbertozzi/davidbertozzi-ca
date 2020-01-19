@@ -23,6 +23,8 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "react/prop-types": "off",
+    "react/jsx-one-expression-per-line": "off"
   }
 }
