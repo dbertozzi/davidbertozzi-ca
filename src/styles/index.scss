@@ -233,6 +233,9 @@ $banner-content-width: 70vw;
     grid-column: 2;
     width: 200px;
     height: auto;
+    &:hover {
+      outline: 0px solid transparent;
+    }
   }
   p {
     grid-row: 2;

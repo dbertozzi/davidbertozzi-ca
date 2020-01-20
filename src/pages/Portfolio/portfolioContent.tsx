@@ -33,7 +33,7 @@ const data: {
 } = {
   motivationCopy: `I am passionate about making things. Software is constantly innovating 
   its tools and application in ways that have potential to influence everything. With my 
-  value for meaning and personal challenge web 
+  value for meaning and personal challenge, web 
   development is one of the most exciting and fulfilling careers possible for me.`,
   githubURL: "https://github.com/dbertozzi",
   introduction: [
@@ -107,8 +107,8 @@ const data: {
     images: [
       {
         copy: `Ventum requested a fit tool after seeing the press about Diamondback's calculator. Triathlon bike fit is a complex 
-        topic and for direct-to-consumer bike sales, an obstacle for sale because customers fear the costly mistake of selecting the wrong size. The bikes can adjust in a plethora of 
-        ways and fit ranges overlap. The objective get the athlete on the size that fits them now and has the right adjustment for the future without live customer support.`,
+        topic and for direct-to-consumer bike sales, an obstacle for transaction completion because customers fear the costly mistake of selecting the wrong size. The bikes can adjust in a plethora of 
+        ways and fit ranges overlap. The objective is to get the athlete on the size that fits them now and has the right adjustment for the future without live customer support.`,
         src: "/ventum-fit/01.png",
         label: "Select a frame"
       },
@@ -119,7 +119,7 @@ const data: {
         label: "Select fit method"
       },
       {
-        copy: `The user is instructed on how to accurately measure their bicycle or body based on the previous selection. These measurements are provide 
+        copy: `The user is instructed on how to accurately measure their bicycle or body respective to the previous selection. These measurements provide 
         a fit point that allows the user to relate their unique fit to possible fit coordinates of each size of frame.`,
         src: "/ventum-fit/03.png",
         label: "Measurement entry"
@@ -128,19 +128,19 @@ const data: {
         copy: `For an athlete purchasing their first triathlon bike the frame size may be all they need to know to make the purchase. 
         If the frame size is correct they can visit a bike fitter once they get the bike and have it professionally adjusted. Alternatively, they could begin 
         with the suggested fit point and make small adjustments over time until a position is found. The suggested point is a standard, but there is error in measuring the 
-        body as well as uniqueness in physiology. Even with a professional in person fit it is a continual process of adjustment seeking the ideal position that offers optimal aerodynics and power output.`,
+        body as well as uniqueness in physiology. Even with a professional in-person fit it is a continual process of adjustment seeking the ideal position that offers optimal aerodynics and power output.`,
         src: "/ventum-fit/04.png",
         label: "Suggested frame size"
       },
       {
         copy: `For athletes who are experienced with bike fit or want to learn more the details are provided. The adjustment range from the athletes fit point is shown in relation to the 
-        suggested size, and the nearest neighboring sizes. There are cases when an athlete may not to be in the middle of the adjustment range. For instance, if the athlete is absolutely sure of 
-        their fit point they may want to have no spacers under the stem or arm rests for aerodynamics and a clean aesthetic.`,
+        suggested size, and the same for nearest neighbor frame sizes. There are cases when an athlete may not to be in the middle of the adjustment range. For instance, if the athlete is absolutely sure of 
+        their fit point they may want to have minimal spacers under the stem and arm rests for aerodynamics and a clean aesthetic.`,
         src: "/ventum-fit/05.png",
         label: "Fit details"
       },
       {
-        copy: `A graphical representation of the fit range is standard information that athletes use to select bicycles. In the fit details 
+        copy: `A graphical representation of the fit range is standard information that athletes use to select triathlon bicycles. In the fit details 
         an interactive plot shows the user where their fit point is in the range of fit points graphically, and displays the details of how to 
         configure each fit point when it is moused over.`,
         src: "/ventum-fit/06.png",
@@ -155,9 +155,9 @@ const data: {
       `Implemented design using JavaScript, Chart.js, and Bootstrap`,
       `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`
     ],
-    description: `When tasked with creating a fit table for a KQS client's triathlon bicycle I knew there could be a more precise way to do it. 
-    I had read on Slowtwitch about all the information athletes like to know about triathlon bike fit, and Slowtwitch Founder Dan Empfield had written 
-    extensive articles on the topic. With a bit of research I came up with a concept for assigning bicycle size. Diamondback's Custom Studio program where 
+    description: `When tasked with creating a fit table based on height for a KQS client's triathlon bicycle I knew there could be a more precise way to do it. 
+    I had read on Slowtwitch about all the information athletes like to know about triathlon bike fit, and Slowtwitch Founder Dan Empfield has written 
+    extensively on the topic. With a bit of research I came up with a concept for assigning bicycle size. Diamondback's Custom Studio program where 
     the calculator was used has since been shut down and I do not have permisison to host it myself but an article reviewing the calculator on slowtwitch remains.`,
     link:
       "https://www.slowtwitch.com/Bike_Fit/Diamondback_s_Online_Fit_Calculator_6559.html",
