@@ -29,8 +29,6 @@ h4 {
 }
 
 /* Navbar */
-// for small screens place nav at top and logo below
-// or change to hamburger and put logo centered
 .header-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -211,6 +209,8 @@ $small-screen-motivaiton-copy-width: 240px;
     margin-bottom: 1em;
     align-self: flex-start;
   }
+}
+/* Contact page */
 .contact-wrapper {
   @extend %content-margin;
   display: flex;
