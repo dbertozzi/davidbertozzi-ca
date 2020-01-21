@@ -198,7 +198,6 @@ $small-screen-motivaiton-copy-width: 240px;
   width: 100vw;
   height: 3px;
 }
-// make margin smaller for small screens
 .skills-wrapper {
   @extend %content-margin;
   display: flex;
@@ -212,9 +211,6 @@ $small-screen-motivaiton-copy-width: 240px;
     margin-bottom: 1em;
     align-self: flex-start;
   }
-}
-
-/* Contact page */
 .contact-wrapper {
   @extend %content-margin;
   display: flex;
