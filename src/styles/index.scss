@@ -31,13 +31,11 @@ h4 {
 /* Navbar */
 // for small screens place nav at top and logo below
 // or change to hamburger and put logo centered
-$nav-height: 72px;
 .header-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   width: 100vw;
-  height: $nav-height;
 }
 %nav-item {
   display: flex;
@@ -93,6 +91,21 @@ $nav-height: 72px;
   color: $secondary-color-2;
   margin-left: 3px;
 }
+@media only screen and (max-width: 1050px) {
+  .header-wrapper {
+    grid-template-rows: repeat (2, 1fr);
+    grid-template-columns: 1fr;
+  }
+  .navbar {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .logo-div {
+    grid-row: 2;
+    grid-column: 1;
+    justify-self: center;
+  }
+}
 /* Block at top right of page */
 .top-right-block {
   height: 36px;
@@ -110,7 +123,14 @@ $nav-height: 72px;
 $github-circle-diameter: 250px;
 $motivation-copy-width: 310px;
 $banner-content-width: 70vw;
-
+/* Layout for contact, landing, and projects pages */
+%content-margin {
+  margin-left: (100vw - $banner-content-width)/2;
+  margin-right: (100vw - $banner-content-width)/2;
+}
+@media only screen and (max-width: 750px) {
+  $banner-content-width: 90vw;
+}
 .motivation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -118,27 +138,54 @@ $banner-content-width: 70vw;
   align-items: center;
   width: $banner-content-width;
   max-width: 1200px;
-  margin: auto;
   height: 600px;
   div {
     width: $motivation-copy-width;
-    order: 0;
     font-size: 16px;
   }
   a {
-    order: 1;
     width: $github-circle-diameter;
     height: $github-circle-diameter;
     border-radius: $github-circle-diameter/2;
-    border: 3px solid $secondary-color-2;
+    margin: ($motivation-copy-width - $github-circle-diameter)/2;
+    border: 3px solid $secondary-color-1;
     background-color: $primary-color-1;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: ($motivation-copy-width - $github-circle-diameter)/2;
   }
 }
-// add media query for less than 750px width to change motivation to column
+@media only screen and (max-width: 750px) {
+  .motivation {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    div {
+      grid-row: 1;
+      grid-column: 1;
+    }
+    a {
+      grid-row: 2;
+      grid-column: 1;
+    }
+  }
+}
+$small-screen-circle-diameter: 175px;
+$small-screen-motivaiton-copy-width: 240px;
+@media only screen and (max-width: 500px) {
+  .motivation {
+    a {
+      width: $small-screen-circle-diameter;
+      height: $small-screen-circle-diameter;
+      border-radius: $small-screen-circle-diameter/2;
+      margin: (
+          $small-screen-motivaiton-copy-width - $small-screen-circle-diameter
+        )/2;
+    }
+    div {
+      width: $small-screen-motivaiton-copy-width;
+    }
+  }
+}
 /* Portfolio banner */
 .portfolio-banner-wrapper {
   display: flex;
@@ -149,11 +196,10 @@ $banner-content-width: 70vw;
   background-color: $secondary-color-1;
   width: 100vw;
   height: 3px;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
 }
 // make margin smaller for small screens
 .skills-wrapper {
+  @extend %content-margin;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -161,29 +207,19 @@ $banner-content-width: 70vw;
   height: 300px;
   div,
   h2 {
-    margin: 1em;
-    margin-left: (100vw - $banner-content-width)/2;
-    margin-right: (100vw - $banner-content-width)/2;
+    margin-top: 1em;
+    margin-bottom: 1em;
     align-self: flex-start;
   }
 }
 
-// temp until new projects layout is implimented
-.projects-wrapper {
-  ul {
-    margin-bottom: 10vh;
-  }
-}
-.landing-wrapper,
-.contact-wrapper,
-.projects-wrapper {
-  margin-left: (100vw - $banner-content-width)/2;
-  margin-right: (100vw - $banner-content-width)/2;
-}
+/* Contact page */
 .contact-wrapper {
+  @extend %content-margin;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 3em;
   div[title="cover image"] {
     background-image: url("/contact/cover_photo.jpg");
     background-position: center;
@@ -197,12 +233,15 @@ $banner-content-width: 70vw;
     flex-direction: column;
   }
 }
+/* Landing page */
 .landing-wrapper {
+  @extend %content-margin;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: min-content 1fr;
   grid-gap: 2em;
   margin-top: 70px;
+  margin-bottom: 70px;
   div[title="cover image"] {
     background-image: url("/landing/cover_photo_bw.jpg");
     background-position: bottom center;
@@ -241,49 +280,72 @@ $banner-content-width: 70vw;
     grid-column: 1;
   }
 }
-
-/* Project (individual) component */
+@media only screen and (max-width: 1050px) {
+  .landing-wrapper {
+    div:nth-of-type(2) {
+      grid-template-columns: 300px 200px;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .landing-wrapper {
+    div:nth-of-type(2) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+/* 
+ * Project (individual) component with no images 
+ * Project (individual) component 
+ */
 $project-nav-height: 100px;
 $image-row: 2;
 $list-link-row: 3;
 .project-no-images-wrapper,
 .project-wrapper {
+  @extend %content-margin;
   display: grid;
-  grid-template-columns: (100vw - $banner-content-width)/2 repeat(2, 1fr) (
-      100vw - $banner-content-width
-    )/2;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 100px repeat(2, 1fr);
   grid-gap: 2em;
+  margin-top: 5em;
 }
 .project-no-images-wrapper {
   margin-bottom: 5em;
   h2 {
     grid-row: 1;
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 2;
     justify-self: center;
     align-self: center;
   }
   ul {
     grid-row: 2;
-    grid-column: 3;
+    grid-column: 2;
   }
   p {
     grid-row: 2;
-    grid-column: 2;
+    grid-column: 1;
   }
   a[title$="Link"] {
     width: $github-circle-diameter;
     height: $github-circle-diameter;
     border-radius: $github-circle-diameter/2;
-    border: 3px solid $secondary-color-2;
+    border: 3px solid $secondary-color-1;
     background-color: $primary-color-1;
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 2;
     grid-row: 3;
     justify-self: center;
     align-self: center;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .project-no-images-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
 %arrow {
@@ -318,7 +380,7 @@ button[aria-label="navigate to next content"] {
 }
 .project-wrapper {
   .project-img-wrapper {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: $image-row;
     width: 600px;
     height: 335px;
@@ -335,30 +397,30 @@ button[aria-label="navigate to next content"] {
     max-height: 335px;
   }
   p:first-of-type {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: $image-row;
   }
   a[title$="live site"] {
     width: $github-circle-diameter;
     height: $github-circle-diameter;
     border-radius: $github-circle-diameter/2;
-    border: 3px solid $secondary-color-2;
+    border: 3px solid $secondary-color-1;
     background-color: $primary-color-1;
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-column: 2;
+    grid-column: 1;
     grid-row: $list-link-row;
     justify-self: center;
     align-self: center;
   }
   ul {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: $list-link-row;
     align-self: center;
   }
   h2[title*="Project"] {
-    grid-column: 2 / span 2;
+    grid-column: 1 / span 2;
     grid-row: 1;
     justify-self: center;
   }
@@ -367,12 +429,69 @@ button[aria-label="navigate to next content"] {
   justify-self: center;
   display: flex;
   align-items: center;
-  grid-column: 3;
+  grid-column: 2;
   grid-row: $image-row;
   align-self: end;
   height: $project-nav-height;
   h2 {
     width: 300px;
     text-align: center;
+  }
+}
+$small-screen-proj-image-width: 450px;
+$small-screen-proj-image-height: 251.5px;
+@media only screen and (max-width: 1200px) {
+  .project-img-nav {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .project-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px repeat(4, min-content);
+    grid-gap: 4em;
+    margin-bottom: 5em;
+    img[alt*="project"] {
+      width: $small-screen-proj-image-width;
+      max-height: $small-screen-proj-image-height;
+    }
+    .project-img-wrapper {
+      width: $small-screen-proj-image-width;
+      height: $small-screen-proj-image-height;
+      grid-row: 3;
+      grid-column: 1;
+    }
+    p:first-of-type {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    a[title$="live site"] {
+      grid-column: 1;
+      grid-row: 5;
+    }
+    ul {
+      grid-column: 1;
+      grid-row: 4;
+    }
+    h2[title*="Project"] {
+      grid-column: 1;
+      grid-row: 1;
+      justify-self: center;
+    }
+  }
+}
+$xs-screen-proj-image-width: 350px;
+$xs-screen-proj-image-height: 300px;
+@media only screen and (max-width: 600px) {
+  .project-wrapper {
+    grid-template-columns: 350px;
+    img[alt*="project"] {
+      width: $xs-screen-proj-image-width;
+      max-height: $small-screen-proj-image-height;
+    }
+    .project-img-wrapper {
+      width: $xs-screen-proj-image-width;
+      height: $small-screen-proj-image-height;
+    }
   }
 }
