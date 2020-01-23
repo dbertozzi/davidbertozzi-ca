@@ -106,7 +106,7 @@ const data: {
     ],
     images: [
       {
-        copy: `Ventum requested a fit tool after seeing the press about Diamondback's calculator. Triathlon bike fit is a complex 
+        copy: `Ventum Racing, the official bicycle company of Ironman requested a fit tool after seeing the press about Diamondback's calculator. Triathlon bike fit is a complex 
         topic and for direct-to-consumer bike sales, an obstacle for transaction completion because customers fear the costly mistake of selecting the wrong size. The bikes can adjust in a plethora of 
         ways and fit ranges overlap. The objective is to get the athlete on the size that fits them now and has the right adjustment for the future without live customer support.`,
         src: "/ventum-fit/01.png",
@@ -155,9 +155,9 @@ const data: {
       `Implemented design using JavaScript, Chart.js, and Bootstrap`,
       `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`
     ],
-    description: `When tasked with creating a fit table based on height for a KQS client's triathlon bicycle I knew there could be a more precise way to do it. 
-    I had read on Slowtwitch about all the information athletes like to know about triathlon bike fit, and Slowtwitch Founder Dan Empfield has written 
-    extensively on the topic. With a bit of research I came up with a concept for assigning bicycle size. Diamondback's Custom Studio program where 
+    description: `When tasked with creating a fit table based on height for a KQS client's triathlon bicycle I was surprised by how inaccurate it could be. 
+    I had read on triathlon news site and forum, Slowtwitch about all the information athletes like to know about triathlon bike fit. Slowtwitch Founder Dan Empfield has written 
+    extensively on the topic. With a bit of research I came up with a concept for assigning bicycle size and pitched it to Diamondback who gave me the go ahead to develop it for their website. Diamondback's Custom Studio program where 
     the calculator was used has since been shut down and I do not have permisison to host it myself but an article reviewing the calculator on slowtwitch remains.`,
     link:
       "https://www.slowtwitch.com/Bike_Fit/Diamondback_s_Online_Fit_Calculator_6559.html",
