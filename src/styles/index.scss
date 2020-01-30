@@ -22,7 +22,7 @@ $max_width: 800;
 // These values represent the range of fon-tsize to apply
 // These values effect the base font-size, headings and other elements will scale proportionally
 $min_font: 12;
-$max_font: 24;
+$max_font: 20;
 
 :root {
   font-size: #{$min_font}px;
@@ -104,6 +104,11 @@ h4 {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 750px) {
+  .logo-div {
+    margin: 1em;
+  }
+}
 .name-div {
   font-size: 36px;
   letter-spacing: 4px;
@@ -131,18 +136,6 @@ h4 {
     justify-self: center;
   }
 }
-/* Block at top right of page */
-.top-right-block {
-  height: 36px;
-  width: 150px/1440px * 100vw;
-  grid-column: 3;
-  justify-self: flex-end;
-  align-self: flex-end;
-  background-color: $primary-color-1;
-  border: 1px solid $secondary-color-1;
-  margin-bottom: -20px;
-  transform: translate(1px);
-}
 
 /* Portfolio Motivation */
 $github-circle-diameter: 250px;
@@ -158,16 +151,14 @@ $banner-content-width: 70vw;
   $banner-content-width: 90vw;
 }
 .motivation {
+  @extend %content-margin;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, $banner-content-width/2);
   justify-items: center;
   align-items: center;
   width: $banner-content-width;
   max-width: 1200px;
-  height: 600px;
-  div {
-    width: $motivation-copy-width;
-  }
+  margin-top: 4em;
   a {
     width: $github-circle-diameter;
     height: $github-circle-diameter;
@@ -179,17 +170,37 @@ $banner-content-width: 70vw;
     align-items: center;
     justify-content: center;
   }
+  .skills-wrapper {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: min-content;
+    width: $banner-content-width;
+    div,
+    h2 {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      align-self: flex-start;
+    }
+  }
 }
 @media only screen and (max-width: 750px) {
   .motivation {
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: $banner-content-width;
+    grid-gap: 5em;
     div {
       grid-row: 1;
       grid-column: 1;
     }
     a {
       grid-row: 2;
+      grid-column: 1;
+    }
+    .skills-wrapper {
       grid-column: 1;
     }
   }
@@ -206,9 +217,6 @@ $small-screen-motivaiton-copy-width: 240px;
           $small-screen-motivaiton-copy-width - $small-screen-circle-diameter
         )/2;
     }
-    div {
-      width: $small-screen-motivaiton-copy-width;
-    }
   }
 }
 /* Portfolio banner */
@@ -222,20 +230,7 @@ $small-screen-motivaiton-copy-width: 240px;
   width: 100vw;
   height: 3px;
 }
-.skills-wrapper {
-  @extend %content-margin;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 300px;
-  div,
-  h2 {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    align-self: flex-start;
-  }
-}
+
 /* Contact page */
 .contact-wrapper {
   @extend %content-margin;
@@ -371,8 +366,19 @@ $xs-content-width: 95vw;
 $xs-content-margin: (100vw - $xs-content-width)/2;
 @media only screen and (max-width: 800px) {
   .project-no-images-wrapper {
-    display: flex;
-    flex-direction: column;
+    grid-template-rows: 100px repeat(3, min-content);
+    ul {
+      grid-row: 3;
+      grid-column: 1;
+    }
+    p {
+      grid-row: 2;
+      grid-column: 1;
+    }
+    a[title$="Link"] {
+      grid-row: 4;
+      grid-column: 1;
+    }
   }
 }
 @media only screen and (max-width: 600px) {
@@ -380,7 +386,6 @@ $xs-content-margin: (100vw - $xs-content-width)/2;
     grid-template-columns: $xs-content-width;
     margin-left: $xs-content-margin;
     margin-right: $xs-content-margin;
-    grid-gap: 1em;
   }
 }
 %arrow {

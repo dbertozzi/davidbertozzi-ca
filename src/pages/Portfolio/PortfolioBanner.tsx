@@ -1,5 +1,4 @@
 import React from "react";
-import Motivation from "./Motivation";
 
 const PortfolioBanner: React.FunctionComponent<{
   motivationCopy: string;
@@ -10,8 +9,11 @@ const PortfolioBanner: React.FunctionComponent<{
   };
 }> = ({ motivationCopy, githubURL, skills }) => {
   return (
-    <div className="portfolio-banner-wrapper">
-      <Motivation motivationCopy={motivationCopy} githubURL={githubURL} />
+    <div className="motivation">
+      <div className="motivation-copy">{motivationCopy}</div>
+      <a href={githubURL} target="_blank" rel="noopener noreferrer">
+        <h3>dbertozzi GitHub</h3>
+      </a>
       <div className="skills-wrapper">
         <h2>Skills</h2>
         <div>
