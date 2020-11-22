@@ -1,4 +1,4 @@
-$main-bg-color: #0957a8;
+$main-bg-color: #fff;
 $primary-color-1: #246db9;
 $primary-color-2: #064586;
 $secondary-color-1: #ffa621;
@@ -42,10 +42,10 @@ $max_font: 20;
 }
 
 a {
-  color: $grey-color-1;
+  color: $secondary-color-2;
   text-decoration: none;
   &:hover {
-    color: $secondary-color-2;
+    color: $grey-color-1;
   }
 }
 h1,
