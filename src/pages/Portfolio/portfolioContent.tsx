@@ -1,9 +1,6 @@
 const data: {
   introduction: { title: string; content: string }[];
-  skills: {
-    technical: { title: string; listItems: string[] };
-    design: { title: string; listItems: string[] };
-  };
+  skills: { category: string; skill: string[] }[];
   ventumFit: {
     title: string;
     listItems: string[];
@@ -31,17 +28,16 @@ const data: {
   motivationCopy: string;
   githubURL: string;
 } = {
-  motivationCopy: `I am passionate about making things. Software is constantly innovating 
-  its tools and application in ways that have potential to influence everything. With my 
-  value for meaning and personal challenge, web 
-  development is one of the most exciting and fulfilling careers possible for me.`,
+  motivationCopy: `I develop web applications that transform CIBC operations. I appreciate the continually learning
+  required to be a web developer and satisfaction of creating something impactful with my technical skills. When I'm not
+   coding I love riding bikes with friends or playing video games.`,
   githubURL: "https://github.com/dbertozzi",
   introduction: [
     {
       title: "Introduction",
       content: `At University of Toronto David studied Mechanical Engineering with the Mechatronics stream. 
     Upon graduation he began work in an industry he has been passionate about for most of his life by joining 
-    KQS, a small team of consultants who design aerodynamic racing bicycles.`
+    KQS, a small team of consultants who design aerodynamic racing bicycles. `,
     },
     {
       title: "Mechanical design",
@@ -50,7 +46,7 @@ const data: {
     begins with industrial designer collaboration to creat the desired aesthetic and solutions to user experience problems. 
     As the design progresses the industrial designer is less involved and challenges are specific to manufacturing 
     method, aerodynamic perform, structural integrity, and compatibility with standard components. At the end of this process 
-    of ongoing design negotiation with the client and design team the product is released and tool cutting for production begins.`
+    of ongoing design negotiation with the client and design team the product is released and tool cutting for production begins.`,
     },
     {
       title: "Beginning software",
@@ -59,41 +55,34 @@ const data: {
     who saw it as an opportunity differentiate themselves and got on board. The final product was used in Diamondback's 
     direct-to-consumer custom bike builder app and received positive press from the bicycle community, and eventually led to more 
     clients requesting bike fit apps. Since then David's interest in web development has taken off and he's on the path of continual 
-    learning and has taught himself a variety of technologies including React and NodeJS.`
-    }
-  ],
-  skills: {
-    technical: {
-      title: "Technical",
-      listItems: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Python",
-        "AWS",
-        "SQL",
-        "C",
-        "HTML5",
-        "CSS",
-        "SCSS",
-        "npm",
-        "webpack"
-      ]
+    learning and has taught himself a variety of technologies including React and NodeJS.`,
     },
-    design: {
-      title: "Design",
-      listItems: [
+  ],
+  skills: [
+    {
+      category: "Languages",
+      skill: ["JavaScript", "Python", "CSS", "HTML", "SQL", "C"],
+    },
+    { category: "Front End", skill: ["React", "Svelte"] },
+    { category: "Back End", skill: ["Node.js", "Flask"] },
+    {
+      category: "DevOps",
+      skill: ["npm", "webpack", "Docker", "AWS", "git", "bash"],
+    },
+    {
+      category: "Design",
+      skill: [
+        "Illustrator",
         "Sketch",
         "InVision",
-        "Illustrator",
         "Indesign",
         "Wordpress",
         "Shopify",
         "SolidWorks",
-        "Onshape"
-      ]
-    }
-  },
+        "Onshape",
+      ],
+    },
+  ],
   ventumFit: {
     link: "http://fit.ventumracing.com",
     title: `Ventum Fit Calculator`,
@@ -102,7 +91,7 @@ const data: {
       `Data visualization using React-Vis to communicate trade offs of different bike sizes`,
       `Application layout with CSS Grid and Flexbox, and Media Query Breakpoints to create a responsive design according to Designer's specification`,
       `UX Design intended to present users of different knowledge levels with information at a digestible rate`,
-      `Managing project tasks and timeline using NiftyPM`
+      `Managing project tasks and timeline using NiftyPM`,
     ],
     images: [
       {
@@ -110,19 +99,19 @@ const data: {
         topic and for direct-to-consumer bike sales, an obstacle for transaction completion because customers fear the costly mistake of selecting the wrong size. The bikes can adjust in a plethora of 
         ways and fit ranges overlap. The objective is to get the athlete on the size that fits them now and has the right adjustment for the future without live customer support.`,
         src: "/ventum-fit/01.png",
-        label: "Select a frame"
+        label: "Select a frame",
       },
       {
         copy: `The user chooses a method of bike fit. If they already own a bike measuring it would be the best way to start. 
         if they do not, an equation based on many orthodox bike fits helps predict their fit point.`,
         src: "/ventum-fit/02.png",
-        label: "Select fit method"
+        label: "Select fit method",
       },
       {
         copy: `The user is instructed on how to accurately measure their bicycle or body respective to the previous selection. These measurements provide 
         a fit point that allows the user to relate their unique fit to possible fit coordinates of each size of frame.`,
         src: "/ventum-fit/03.png",
-        label: "Measurement entry"
+        label: "Measurement entry",
       },
       {
         copy: `For an athlete purchasing their first triathlon bike the frame size may be all they need to know to make the purchase. 
@@ -130,30 +119,30 @@ const data: {
         with the suggested fit point and make small adjustments over time until a position is found. The suggested point is a standard, but there is error in measuring the 
         body as well as uniqueness in physiology. Even with a professional in-person fit it is a continual process of adjustment seeking the ideal position that offers optimal aerodynics and power output.`,
         src: "/ventum-fit/04.png",
-        label: "Suggested frame size"
+        label: "Suggested frame size",
       },
       {
         copy: `For athletes who are experienced with bike fit or want to learn more the details are provided. The adjustment range from the athletes fit point is shown in relation to the 
         suggested size, and the same for nearest neighbor frame sizes. There are cases when an athlete may not to be in the middle of the adjustment range. For instance, if the athlete is absolutely sure of 
         their fit point they may want to have minimal spacers under the stem and arm rests for aerodynamics and a clean aesthetic.`,
         src: "/ventum-fit/05.png",
-        label: "Fit details"
+        label: "Fit details",
       },
       {
         copy: `A graphical representation of the fit range is standard information that athletes use to select triathlon bicycles. In the fit details 
         an interactive plot shows the user where their fit point is in the range of fit points graphically, and displays the details of how to 
         configure each fit point when it is moused over.`,
         src: "/ventum-fit/06.png",
-        label: "Fit plot"
-      }
-    ]
+        label: "Fit plot",
+      },
+    ],
   },
   diamondFit: {
     title: `Diamondback Fit Calculator`,
     listItems: [
       `Designed a bike fitting app that provides easily accessible information to customers and bike fitters that would normally require interacting with a customer service agent during and after purchase`,
       `Implemented design using JavaScript, Chart.js, and Bootstrap`,
-      `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`
+      `Initial proof of concept app leading project approval was built as desktop app using Python and Tkinter`,
     ],
     description: `When tasked with creating a fit table based on height for a KQS client's triathlon bicycle I was surprised by how inaccurate it could be. 
     I had read on triathlon news site and forum, Slowtwitch about all the information athletes like to know about triathlon bike fit. Slowtwitch Founder Dan Empfield has written 
@@ -162,25 +151,25 @@ const data: {
     link:
       "https://www.slowtwitch.com/Bike_Fit/Diamondback_s_Online_Fit_Calculator_6559.html",
     linkTitle: "Visit project review",
-    path: "diamondback-fit"
+    path: "diamondback-fit",
   },
   capstone: {
     title: `Embedded Developer, Hydraulic and Pneumatic Lab Equipment Design`,
     listItems: [
       `Interfaced with hardware using C to read signals from analog ports, convert to digital, and write data to storage device asynchronously according to interrupt events`,
       `Designed, wrote, and tested code for limited memory microcontroller to perform concurrent operations`,
-      `Selected hardware electric motor control, optical sensor data sampling, force sensor data sampling with Arduino`
+      `Selected hardware electric motor control, optical sensor data sampling, force sensor data sampling with Arduino`,
     ],
-    description: ``
+    description: ``,
   },
   hueclues: {
     title: `Front End Developer, Hueclues`,
     listItems: [
       `UX Design and Development of front end features using JavaScript and Bootstrap resulting in 500+ user sign up`,
       `Wrote internal documentation for testing and staging procedures`,
-      `Worked in cross-functional team to deliver a high quality user experience and meet functional objectives`
+      `Worked in cross-functional team to deliver a high quality user experience and meet functional objectives`,
     ],
-    images: [{ src: "" }]
+    images: [{ src: "" }],
   },
   hatchways: {
     link: "https://github.com/hatchways/team-chestnut",
@@ -188,14 +177,14 @@ const data: {
     listItems: [
       `Engaged in agile workflow using Git and Zenhub with developers and team lead`,
       `Developed RESTful Web Services for user registration/login, new product creation, and getting user profile using Node.js, Express, Mongoose, MongoDB, and JWT authentication`,
-      `Developed React components for user shop, and new product creation with Material UI, Axios, and useReducer`
+      `Developed React components for user shop, and new product creation with Material UI, Axios, and useReducer`,
     ],
     description: `This was a two month long team project I contributed to. The objective was to gain experience in a professional agile work flow 
     and practice new technologies. The app we built is an online Bakery Shop that allows sellers to create their own stores and list their
      products alongside other sellers. Both shoppers and sellers can sign up for accounts and transactions are completed with Stripe.`,
     linkTitle: "Visit project GitHub",
-    path: "hatchways"
-  }
+    path: "hatchways",
+  },
 };
 
 export default data;

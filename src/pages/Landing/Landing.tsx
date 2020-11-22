@@ -9,12 +9,11 @@ const Landing: React.FC = () => {
         <h1>About</h1>
         <p>
           I am a graduate of University of Toronto with a degree in Mechanical
-          Engineering specializing in stream options of Mechatronics and Heat
-          and Mass Transfer. Since graduation I&apos;ve worked as an engineering
-          consultant specializing in bicycle design and managing product
-          development. I&apos;m a continual learner with something always on the
-          go that keeps me excited about life and feeling growth. Outside of
-          engineering I enjoy the outdoors and am a cycling enthusiast.
+          Engineering specializing in Mechatronics. At CIBC, I am a Software
+          Engineer developing applications for managing internal operations.
+          I&apos;m a continual learner with something always on the go that
+          keeps me excited about life and feeling growth. Outside of engineering
+          I enjoy the outdoors and am a cycling enthusiast.
         </p>
         <img src="/landing/profile_photo.jpg" alt="david bertozzi headshot" />
       </div>
