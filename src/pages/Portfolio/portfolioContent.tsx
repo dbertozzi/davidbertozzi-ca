@@ -66,7 +66,7 @@ const data: {
     { category: "Front End", skill: ["React", "Svelte"] },
     { category: "Back End", skill: ["Node.js", "Flask"] },
     {
-      category: "DevOps",
+      category: "Additional Knowledge",
       skill: ["npm", "webpack", "Docker", "AWS", "git", "bash"],
     },
     {
